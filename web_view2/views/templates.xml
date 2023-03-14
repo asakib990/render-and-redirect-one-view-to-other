@@ -1,0 +1,45 @@
+<odoo>
+    <template id="patient_page" name="Hospital Patients">
+        <t t-call="website.layout">
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                    </tr>
+                    <t t-foreach="patient" t-as="p">
+                        <tr>
+                            <td>
+                                <t t-esc="p.name"/>
+                            </td>
+                            <td>
+                                <t t-esc="p.email"/>
+                            </td>
+                            <td>
+                                <t t-esc="p.age"/>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="add_new_patient" name="Add New Patient">
+        <t t-call="website.layout">
+            <div class="container">
+                <form action="/my_form" method="post">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name"/>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email"/>
+                    <label for="age">Age</label>
+                    <input type="age" name="age"/>
+                    <input type="submit" value="Submit"/>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

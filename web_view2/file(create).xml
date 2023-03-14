@@ -1,0 +1,250 @@
+ <template id="professional_skill_info_create" name="Create a new Professional Skill">
+            <t t-call="website.layout">
+                <body>
+                    <div class="container pt-5">
+                        <form action="/professional_skill_info_create" method="post" enctype="multipart/form-data">
+                            <div class="card card-default">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="card-header title-card">
+                                    <p class="card-title text-blue pt-4">
+                                        <i class="glyphicon glyphicon-lock text-gold"/>
+                                        <b>Professional Info</b>
+                                    </p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Code</label>
+                                                <input name="name" t-att-value="code" type="text" class="form-control"
+                                                       required="True" readonly="1"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Total Work Experience in year *</label>
+                                                <input name="total_work_experience_year" type="number"
+                                                       class="form-control" required="True"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Main Interest *</label>
+                                                <input name="main_interest" type="text" class="form-control"
+                                                       required="True"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Main Professional Skill Area *</label>
+                                                <input name="main_professional_skill_area" type="text"
+                                                       class="form-control" required="True"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Video Resume Link</label>
+                                                <input name="video_resume_link" type="text" class="form-control"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <div class="one2many-table" id="one2many_table">
+                                                <div id="one2many_body">
+                                                    <div class="row one2many-row" id="one2many_row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group checked-record">
+                                                                <input id="checked_record" type="checkbox"/>
+                                                                <label class="control-label">Skill Details</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body-pro">
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Organization Name
+                                                                            *
+                                                                        </label>
+                                                                        <input id="name" type="text"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Department *
+                                                                        </label>
+                                                                        <input id="department" type="text"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Work Start Date *
+                                                                        </label>
+                                                                        <input id="work_start_date" type="date"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Work End Date *
+                                                                        </label>
+                                                                        <input id="work_end_date" type="date"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Designation *
+                                                                        </label>
+                                                                        <input id="designation" type="text"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Work Experience
+                                                                            Letter
+                                                                        </label>
+                                                                        <input type="file" class="file" multiple="false"
+                                                                               data-show-upload="true"
+                                                                               data-show-caption="true" lass="file"
+                                                                               data-show-preview="true"
+                                                                               id="work_experience_letter"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Work Position URL
+                                                                        </label>
+                                                                        <input id="work_position_url" type="text"
+                                                                               class="form-control"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Work Status</label>
+                                                                        <select id="work_status" class="form-control"
+                                                                                required="True">
+                                                                            <option value="part_time" selected="True">
+                                                                                Part time
+                                                                            </option>
+                                                                            <option value="full_time">Full time</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Duration in hour
+                                                                            *
+                                                                        </label>
+                                                                        <input id="duration" type="number"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Credit Hour</label>
+                                                                        <input id="credit_hour" type="text"
+                                                                               readonly="readonly"
+                                                                               class="form-control"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Reporting Boss
+                                                                            Name*
+                                                                        </label>
+                                                                        <input id="reporting_boss_name" type="text"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Reporting Boss
+                                                                            Email *
+                                                                        </label>
+                                                                        <input id="reporting_boss_email" type="text"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Reporting Boss
+                                                                            Phone *
+                                                                        </label>
+                                                                        <input id="reporting_boss_phone" type="number"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Number of Employee
+                                                                            Supervised
+                                                                        </label>
+                                                                        <input id="number_of_employee_supervised_by_you"
+                                                                               type="number" class="form-control"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">Address*</label>
+                                                                        <input id="street" type="text"
+                                                                               class="form-control" required="True"/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-group">
+                                                                        <label class="control-label">City</label>
+                                                                        <input id="city" type="text"
+                                                                               class="form-control"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" name="all_row_data" id="all_row_data"/>
+                                            <div class="form-row row button-space-2">
+                                                <div class="form-group">
+                                                    <button type="button" id="add_row" class="btn btn-success">Add new
+                                                        record
+                                                    </button>
+                                                    <button type="button" id="delete_row" class="btn btn-danger">Delete
+                                                        record
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-lg-12 pb-5">
+                                            <div class="pull-right">
+                                                <button class="btn btn-success btn-lg" id="submit_skill_info"
+                                                        type="submit">Save
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <br/>
+                    </div>
+                </body>
+            </t>
+        </template>

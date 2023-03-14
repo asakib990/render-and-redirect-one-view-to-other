@@ -1,0 +1,53 @@
+<template id="professional_skill_update" name="Update Award Achievement">
+    <t t-call="website.layout">
+        <body>
+            <div class="container pt-5">
+                <form action="/professional_skill_update" method="post" enctype="multipart/form-data">
+                    <div class="card card-default">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="card-header title-card">
+                            <p class="card-title text-blue pt-4">
+                                <i class="glyphicon glyphicon-lock text-gold"/>
+                                <b>Update Professional Skill</b>
+                            </p>
+                        </div>
+                        <div class="card-body">
+                            <div class="invisible" style="height: 0;">
+                                <input name="id" t-att-value="professional_skill.id" type="text"/>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Name</label>
+                                        <input name="name"
+                                               t-att-value="professional_skill.name" type="text"
+                                               class="form-control"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Description</label>
+                                        <input name="description"
+                                               t-att-value="professional_skill.description" type="textarea"
+                                               class="form-control"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-lg-12 pb-5">
+                                    <div class="pull-right">
+                                        <button class="btn btn-success btn-lg" id="submit_achievement_info"
+                                                type="submit">Update
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <br/>
+            </div>
+        </body>
+    </t>
+</template>
