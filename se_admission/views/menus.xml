@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!--This Menu Item must have a parent and an action -->
+        <menuitem id="se_application_root"
+                  name="Admission"/>
+
+        <!--SmartEdu Admission Menu-->
+        <menuitem id="se_application_menu_admission"
+                  name="Admission"
+                  parent="se_application_root"/>
+
+        <!--SmartEdu Admission configure Menu-->
+
+        <menuitem id="se_application_submenu_admission_register"
+                  name="Admission Register / Intake"
+                  parent="se_application_menu_admission"
+                  action="se_application_register_action_view"/>
+
+        <menuitem id="se_application_submenu_application"
+                  name="Application"
+                  parent="se_application_menu_admission"
+                  action="se_application_action"/>
+    </data>
+</odoo>

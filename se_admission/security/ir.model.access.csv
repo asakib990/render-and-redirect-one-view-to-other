@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_se_application,se_application,model_se_application,base.group_user,1,1,1,1
+access_se_application_board_result_english,se_application_board_result_english,model_se_application_board_result_english,base.group_user,1,1,1,1
+access_se_application_board_result_general,se_application_board_result_general,model_se_application_board_result_general,base.group_user,1,1,1,1
+access_se_application_board_result_all,se_application_board_result_all,model_se_application_board_result_all,base.group_user,1,1,1,1
+access_se_application_achievement,se_application_achievement,model_se_application_achievement,base.group_user,1,1,1,1
+access_se_application_professional_experience,se_application_professional_experience,model_se_application_professional_experience,base.group_user,1,1,1,1
+access_se_application_register,se_application_register,model_se_application_register,base.group_user,1,1,1,1
+access_se_subject,se_subject,model_se_subject,base.group_user,1,1,1,1
+access_se_subject_extra,se_subject_extra,model_se_subject_extra,base.group_user,1,1,1,1
+
+
+
